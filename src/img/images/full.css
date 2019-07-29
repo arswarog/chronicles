@@ -1,0 +1,58 @@
+.loc {height:34px; background:url(/img/misc/menu.gif) repeat-x #333333; border:0px;}
+.param-bot {background:url(/img/misc/param-bot.gif) repeat #272727;}
+.title {background:url(/img/misc/menu.gif) repeat-x #333333; border:0px; padding-top:3px;}
+
+.el34 {background:url(/img/misc/el32e.gif) #333333;}
+.el70 {background:url(/img/misc/el68e.gif) #333333;}
+.el134 {background:url(/img/misc/el134.gif) #333333; padding:3px; border:0px;}
+a:hover.el134, span:hover.el134 {background-image:url(/img/misc/el134-hover.gif); border:0px;}
+.el140 {background:url(/img/misc/el140.gif) #333333; padding:2px; border:0px;}
+a:hover.el140 {background-image:url(/img/misc/el140-hover.gif); border:0px;}
+
+span.bar {height:12px; background:url(/img/misc/bar.gif) #000000; border:0px;}
+span.bar span {height:12px; background:url(/img/misc/bar-active.gif) #FF8A00;}
+
+div.filter span a {background:url(/img/misc/menu.gif) repeat-x #333333;}
+div.filter span a.active, div.filter span a:hover {background-image:url(/img/misc/menu-hover.gif);}
+
+div.menu span a {background:url(/img/misc/menu.gif) repeat-x scroll 0 0 #333333;}
+div.menu span a:hover {background-image:url(/img/misc/menu-hover.gif);}
+
+input.btn-s {background:url(/img/misc/btn98.png) transparent; border:0px;}
+input:hover.btn-s {background:url(/img/misc/btn98h.png) transparent; border:0px;}
+input.btn-i {background:url(/img/misc/el34.gif) #333333; padding:1px; border:0px;}
+input:hover.btn-i {background-image:url(/img/misc/el34-hover.gif); border:0px;}
+input.btn-smiles {background-image:url(/img/ico32/smiles.png);}
+input:hover.btn-smiles {background-image:url(/img/ico32/smiles-hover.png);}
+
+a.btn-s {background:url(/img/misc/btn98.png) transparent; padding:1px; border:0px;}
+a:hover.btn-s {background:url(/img/misc/btn98h.png) transparent; padding:1px; border:0px;}
+.btn-b {background:url(/img/misc/btn148.png) transparent; padding:1px; border:0px;}
+a:hover.btn-b {background:url(/img/misc/btn148h.png) transparent; padding:1px; border:0px;}
+.btn-ba {background:url(/img/misc/btn148a.png) transparent; padding:1px; border:0px;}
+a:hover.btn-ba {background:url(/img/misc/btn148ah.png) transparent; padding:1px; border:0px;}
+
+.sep-track {height:34px; background:url(/img/misc/sep-track.png) repeat-x; margin-top:2px;}
+.sep-dang {background:url(/img/misc/sep-dang.gif) repeat-x;}
+.sep-10 {background:url(/img/misc/sep-10.gif) repeat;}
+
+/* Display */
+.displ-t {background:url(/img/misc/display-t.gif) repeat-x #272727;}
+.displ-l {background:url(/img/misc/display-l.gif) repeat-y;}
+.displ-r {background:url(/img/misc/display-r.gif) repeat-y right;}
+.displ-b {background:url(/img/misc/display-b.gif) repeat-x bottom;}
+.displ-tl {background:url(/img/misc/display-tl.gif) no-repeat;}
+.displ-tr {background:url(/img/misc/display-tr.gif) no-repeat right top;}
+.displ-bl {background:url(/img/misc/display-bl.gif) no-repeat left bottom;}
+.displ-br {background:url(/img/misc/display-br.gif) no-repeat right bottom;}
+
+/* Battle */
+.elbt {background:url(/img/misc/el64.gif) #333333;}
+.elbs, .elbsc {background:url(/img/misc/el32.gif) #333333;}
+a.battle-skip {background:url(/img/misc/btn100.png) transparent; padding:1px; border:0px;}
+a:hover.battle-skip {background:url(/img/misc/btn100h.png) transparent; padding:1px; border:0px;}
+.battle-unit {background:url(/img/misc/el64.gif) #333333;}
+.battle-boost1, .battle-boost2 {background:url(/img/misc/el32.gif) #333333;}
+.battle-bar {height:12px; background:url(/img/misc/bar.gif) #000000; border:0px; width:98px;}
+.battle-bar span {height:12px; background:url(/img/misc/bar-active.gif) #FF8A00;}
+.act-bar2 {width:86px;}
