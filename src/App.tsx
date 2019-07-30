@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { connect } from 'react-redux';
+import { Redirect, Route } from 'react-router';
 import { renderRoutes } from 'react-router-config';
 
 import { IGlobalState } from './_reducer';
@@ -8,6 +9,7 @@ import { IProfileState } from './_reducer/profile.interface';
 import { HeaderPart } from './Header';
 
 import onlineGif from './assets/img/online.gif';
+import { HeroesModule } from './Heroes';
 
 interface IProps {
     profile: IProfileState;
@@ -26,8 +28,8 @@ const App = connect(
                 <HeaderPart></HeaderPart>
 
                 <div id="content">
-
-                    {renderRoutes(route.routes)}
+                    <Route path="/heroes" component={HeroesModule}/>
+                    <Redirect path="*" to="/heroes"/>
 
                     <div ng-view ng-show="myuser.id" style={{height: '100%'}}></div>
 

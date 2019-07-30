@@ -9,7 +9,7 @@ interface IProps {
     heroes: IHero[];
 }
 
-export const HeroesPage = connect(
+export const List = connect(
     (state: IGlobalState) => ({
         heroes: state.heroes.heroes,
     }),
@@ -17,29 +17,29 @@ export const HeroesPage = connect(
     ({heroes}: IProps) => {
         return (
             <div>
-                <div className="title">Герои</div>
+                <Link to="/heroes" className="title">Герои</Link>
                 {heroes.map(hero =>
-                    <div>
+                    <div key={hero.id}>
                         <div className="pall">
-                            <Link to={`/hero/${hero.id}`}>
-                            <span className="el70 fll">
-                                <img width="64" height="64" className="fll" alt=""
-                                     src={`/img/hero/${hero.heroBase}.jpg`}/>
-                            </span>
+                            <Link to={`/heroes/${hero.id}`}>
+                                <span className="el70 fll">
+                                    <img width="64" height="64" className="fll" alt=""
+                                         src={`/img/hero/${hero.heroBase}.jpg`}/>
+                                </span>
                                 <span className="bl">
-                                <span className="col1">{hero.name}</span> [{hero.level}]
-                            </span>
+                                    <span className="col1">{hero.name}</span> [{hero.level}]
+                                </span>
                             </Link>
                             <div className="bl70">
-                                <HpBar target={hero}></HpBar>
+                                <HpBar target={hero}/>
                             </div>
-                            <div className="flc"></div>
+                            <div className="flc"/>
 
                             <span className="bl">{hero.more}</span>
-                            <div className="flc"></div>
+                            <div className="flc"/>
                         </div>
-                        <div className="sep-light"></div>
-                        <div className="sep-dark"></div>
+                        <div className="sep-light"/>
+                        <div className="sep-dark"/>
                     </div>,
                 )}
             </div>

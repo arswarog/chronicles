@@ -12,7 +12,7 @@ export function heroesReducer(state: IHeroesState | undefined, action: AnyAction
                 {
                     id      : '123',
                     name    : 'notAhuman',
-                    heroBase: '1231',
+                    heroBase: '2',
                     hp      : 24,
                     hpMax   : 100,
                     mp      : 100,
@@ -25,7 +25,7 @@ export function heroesReducer(state: IHeroesState | undefined, action: AnyAction
                 {
                     id      : '1233',
                     name    : 'human',
-                    heroBase: '23423',
+                    heroBase: '7',
                     hp      : 95,
                     hpMax   : 100,
                     mp      : 10,

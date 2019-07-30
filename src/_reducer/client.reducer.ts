@@ -6,6 +6,8 @@ export enum ClientActionType {
 }
 
 export function clientReducer(state: IClientState | undefined, action: AnyAction): IClientState {
+    console.log(action);
+
     if (!state)
         state = {
             timestampDelta: 0,

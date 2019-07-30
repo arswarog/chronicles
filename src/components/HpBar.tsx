@@ -1,5 +1,5 @@
 import React from 'react';
-import { IHp, IHpMpExp, IHpMp, IMp, count2human } from '../common/hp.interface';
+import { count2human } from '../common/hp.interface';
 
 interface IProps {
     target: {
@@ -13,20 +13,45 @@ interface IProps {
 }
 
 export const HpBar = ({target}: IProps) => {
-    const hpBar = 'hp' in target && 'hpMax' in target;
-    const mpBar = 'mp' in target && 'mpMax' in target;
-    const expBar = 'exp' in target && 'expMax' in target;
+    const vals = [];
+    const bars = [];
+
+    if (target.hpMax) {
+        const val     = target.hp || 0;
+        const max     = target.hpMax;
+        const percent = Math.floor(val / max * 100);
+
+        const style = {width: percent + '%'};
+
+        vals.push(<div key="hpbar__hpval" className="hpbar__hpval">{count2human(val)} / {count2human(max)}</div>);
+        bars.push(<div key="hpbar__hpbar" className="hpbar__hpbar" style={style}/>);
+    }
+
+    if (target.mpMax) {
+        const val     = target.mp || 0;
+        const max     = target.mpMax;
+        const percent = Math.floor(val / max * 100);
+
+        const style = {width: percent + '%'};
+
+        vals.push(<div key="hpbar__mpval" className="hpbar__mpval">{count2human(val)} / {count2human(max)}</div>);
+        bars.push(<div key="hpbar__mpbar" className="hpbar__mpbar" style={style}/>);
+    }
+
+    if (target.expMax) {
+        const val     = target.exp || 0;
+        const max     = target.expMax;
+        const percent = Math.floor(val / max * 100);
+
+        const style = {width: percent + '%'};
+
+        bars.push(<div key="hpbar__expbar" className="hpbar__expbar" style={style}/>);
+    }
 
     return (
-        <div className="bar">
-            {hpBar
-                ? <div className="hpval">{count2human(target.hp)} / {count2human(target.hpMax)}</div>
-                : null
-            }
-            <div ng-show="mpmax" className="mpval">{count2human(target.mp)} / {count2human(target.mpmax)}</div>
-            <div className="hpbar" style={{width: `${target.hp / target.hpmax * 100}%`}}></div>
-            <div ng-show="mpmax" className="mpbar" style="width:{{mp/mpmax*100}}%"></div>
-            <div ng-show="exp" className="expbar" style="width:{{exp}}%"></div>
+        <div className="hpbar">
+            {vals}
+            {bars}
         </div>
     );
 };

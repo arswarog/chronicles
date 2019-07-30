@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
 import App from './App';
-import { HeroesPage } from './Heroes';
+import { HeroesModule, List, View } from './Heroes';
 import { Redirect } from 'react-router-dom';
 
 const Root = ({route}: any) => (
@@ -39,7 +39,7 @@ export const routes: RouteConfig[] = [
         path     : '/auth',
         routes   : [
             {
-                path     : '/home',
+                path     : '/auth/home',
                 exact    : true,
                 component: Home,
             },
@@ -56,17 +56,16 @@ export const routes: RouteConfig[] = [
         ],
     },
     {
-        component: App,
         path     : '/',
+        exact    : true,
+        component: () => <Redirect to={'/heroes'}/>,
+    },
+    {
+        component: App,
         routes   : [
             {
-                path     : '/heroes',
-                component: HeroesPage,
-            },
-            {
-                path     : '/',
-                exact    : true,
-                component: () => <Redirect to={'/heroes'}/>,
+                //path     : '/heroes',
+                component: HeroesModule,
             },
         ],
     },

@@ -1,0 +1,37 @@
+.hpbar {
+    background: black url(../img/bar.png) repeat-x;
+    position: relative;
+    width: 100%;
+
+    &__hpbar,
+    &__mpbar {
+        height: 20px;
+        display: block;
+    }
+
+    &__hpbar {
+        background: red url(../img/bar.png) 0px -45px repeat-x;
+    }
+
+    &__mpbar {
+        background: blue url(../img/bar.png) 0px -65px repeat-x;
+    }
+
+    &__expbar {
+        background: green url(../img/bar.png) 0px -85px repeat-x;
+        height: 5px;
+    }
+
+    &__hpval,
+    &__mpval {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 2px;
+    }
+
+    &__mpval {
+        margin-top: 22px;
+    }
+}
