@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 import { IProfileState } from './profile.interface';
 
-export function profile(state: IProfileState | undefined, action: AnyAction): IProfileState {
+export function profileReducer(state: IProfileState | undefined, action: AnyAction): IProfileState {
     if (!state)
         state = {
             nickname: 'nick name',

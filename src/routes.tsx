@@ -1,6 +1,8 @@
 import React from 'react';
-import { renderRoutes } from 'react-router-config';
+import { renderRoutes, RouteConfig } from 'react-router-config';
 import App from './App';
+import { HeroesPage } from './Heroes';
+import { Redirect } from 'react-router-dom';
 
 const Root = ({route}: any) => (
     <div>
@@ -31,29 +33,40 @@ const GrandChild = ({someProp}: any) => (
     </div>
 );
 
-export const routes = [
+export const routes: RouteConfig[] = [
     {
-        component: App,
+        component: Root,
+        path     : '/auth',
         routes   : [
             {
-                component: Root,
+                path     : '/home',
+                exact    : true,
+                component: Home,
+            },
+            {
+                path     : '/child/:id',
+                component: Child,
                 routes   : [
                     {
-                        path     : '/',
-                        exact    : true,
-                        component: Home,
-                    },
-                    {
-                        path     : '/child/:id',
-                        component: Child,
-                        routes   : [
-                            {
-                                path     : '/child/:id/grand-child',
-                                component: GrandChild,
-                            },
-                        ],
+                        path     : '/child/:id/grand-child',
+                        component: GrandChild,
                     },
                 ],
+            },
+        ],
+    },
+    {
+        component: App,
+        path     : '/',
+        routes   : [
+            {
+                path     : '/heroes',
+                component: HeroesPage,
+            },
+            {
+                path     : '/',
+                exact    : true,
+                component: () => <Redirect to={'/heroes'}/>,
             },
         ],
     },
