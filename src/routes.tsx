@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
 import App from './App';
-import { HeroesModule, List, View } from './Heroes';
+import { HeroesModule, List, View } from './modules/heroes';
 import { Redirect } from 'react-router-dom';
 
 const Root = ({route}: any) => (

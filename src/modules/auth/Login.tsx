@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { IGlobalState } from '../_reducer';
+import { IGlobalState } from '../../reducer';
 
 interface IProps {
 }

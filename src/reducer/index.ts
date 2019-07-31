@@ -5,7 +5,7 @@ import { clientReducer } from './client.reducer';
 import { IProfileState } from './profile.interface';
 import { profileReducer } from './profile.reducer';
 import { history } from '../history';
-import { heroesReducer, IHeroesState } from '../Heroes/_reducer/heroes.reducer';
+import { heroesReducer, IHeroesState } from '../modules/heroes/reducer/heroes.reducer';
 
 export interface IGlobalState {
     router: RouterState;

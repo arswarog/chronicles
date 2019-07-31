@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { IGlobalState } from '../_reducer';
-import { HpBar } from '../components/HpBar';
-import { IHero } from './_reducer/heroes.interface';
+import { IGlobalState } from '../../../reducer';
+import { HpBar } from '../../../components/HpBar';
+import { IHeroFull } from '../interfaces/heroes.interface';
 import { Link } from 'react-router-dom';
+import { match } from 'react-router';
+import { subscribeForHero } from '../actions';
+import { SkillListItem } from '../../skills/SkillListItem';
+import { getMyHero } from '../helpers';
+
+import postGif from '../../../assets/img/post.gif'
 
 interface IProps {
-    hero: IHero;
-    skill: any;
+    heroID: string;
+    hero: IHeroFull | undefined;
+    match: any;
+}
+
+interface IParams {
+    id: string;
 }
 
 export const View = connect(
-    (state: IGlobalState) => ({
-        hero : state.heroes.heroes[0],
-        skill: {},
+    (state: IGlobalState, props: { match: match<IParams> }) => ({
+        heroID: props.match.params.id,
+        hero  : getMyHero(state, props.match.params.id),
+        match : props.match,
     }),
 )(
-    ({hero, skill}: IProps) => {
+    ({hero, heroID, match}: IProps) => {
+        useEffect(subscribeForHero(heroID), [heroID]);
+
+        if (!hero)
+            return (
+                <div className="page-loader">Loading...</div>
+            );
+
         return (
             <div>
                 <div className="title">
@@ -41,26 +60,14 @@ export const View = connect(
                 <div className="menu">
                     <span>
                         <Link className="menu" to={`/hero/${hero.id}/progress`}>
-                            <img className="i" width="32" height="32" src="../img/post.gif" alt=""/>
+                            <img className="i" width="32" height="32" src={postGif} alt=""/>
                             Развитие
                         </Link>
                     </span>
                 </div>
 
                 <div className="title">Умения</div>
-                <div ng-repeat="skill in hero.skills">
-                    <div className="pall">
-                        <a href="#/skill/{{skill.id}}">
-                            <span className="el70 fll">
-                                <img width="64" height="64" className="fll" alt=""
-                                     src={`/img/skills/{skill.skillbase}.jpg`}/>
-                            </span>
-                            <span className="bl col1">{skill.title}</span>
-                        </a>
-                    </div>
-                    <span className="bl">{skill.more}</span>
-                    <div className="flc"/>
-                </div>
+                {hero.skills.map(skill => <SkillListItem key={skill.id} skill={skill}/>)}
                 <div className="sep-light"/>
                 <div className="sep-dark"/>
             </div>

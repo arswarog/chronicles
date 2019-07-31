@@ -2,14 +2,12 @@ import React from 'react';
 import './App.scss';
 import { connect } from 'react-redux';
 import { Redirect, Route } from 'react-router';
-import { renderRoutes } from 'react-router-config';
-
-import { IGlobalState } from './_reducer';
-import { IProfileState } from './_reducer/profile.interface';
-import { HeaderPart } from './Header';
+import { IGlobalState } from './reducer';
+import { IProfileState } from './reducer/profile.interface';
+import { HeaderPart } from './components/Header';
 
 import onlineGif from './assets/img/online.gif';
-import { HeroesModule } from './Heroes';
+import { HeroesModule } from './modules/heroes';
 
 interface IProps {
     profile: IProfileState;
@@ -22,18 +20,18 @@ const App = connect(
         online : 100500,
     }),
 )(
-    ({online, route}: any) => {
+    ({online}: IProps) => {
         return (
             <div className="wrapper">
-                <HeaderPart></HeaderPart>
+                <HeaderPart/>
 
                 <div id="content">
-                    <Route path="/heroes" component={HeroesModule}/>
-                    <Redirect path="*" to="/heroes"/>
+                    <div style={{height: '100%'}}>
+                        <Route path="/heroes" component={HeroesModule}/>
+                        <Redirect path="*" to="/heroes"/>
+                    </div>
 
-                    <div ng-view ng-show="myuser.id" style={{height: '100%'}}></div>
-
-                    <div className="sep-dang"></div>
+                    <div className="sep-dang"/>
 
                     <div className="param-bot" ng-show="myuser.id">
                         <span className="nw"><a href="#/logout">Выход</a></span> |
@@ -48,7 +46,7 @@ const App = connect(
                         <span className="nw"><img width="16" height="16" src={onlineGif} alt="И"/>{online}</span>
                     </div>
 
-                    <div className="sep-track"></div>
+                    <div className="sep-track"/>
 
                     <div id="footer">
                         <div id="copyright">© GreatKings 2013-2019</div>

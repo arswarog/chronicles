@@ -17,6 +17,7 @@
     "@types/react-redux": "^7.1.1",
     "@types/react-router-config": "^5.0.0",
     "@types/react-router-dom": "^4.3.4",
+    "@types/redux-thunk": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
@@ -62,6 +63,7 @@
     "react-redux": "^7.1.0",
     "react-router-config": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "redux-thunk": "^2.3.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
@@ -76,9 +78,13 @@
     "workbox-webpack-plugin": "4.2.0"
   },
   "eslintConfig": {
+    "plugins": [
+      "react-hooks"
+    ],
     "extends": "react-app",
     "rules": {
-      "no-unused-vars": 1
+      "no-unused-vars": 1,
+      "react-hooks/rules-of-hooks": "error"
     }
   },
   "browserslist": {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { IGlobalState } from '../_reducer';
-import { HpBar } from '../components/HpBar';
-import { IHero } from './_reducer/heroes.interface';
+import { IGlobalState } from '../../../reducer';
+import { HpBar } from '../../../components/HpBar';
+import { IHero } from '../interfaces/heroes.interface';
 import { Link } from 'react-router-dom';
 
 interface IProps {

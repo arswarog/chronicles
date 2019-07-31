@@ -1,0 +1,42 @@
+[
+  {
+    "id": "123",
+    "name": "notAhuman",
+    "heroBase": "2",
+    "hp": 24,
+    "hpMax": 100,
+    "mp": 100,
+    "mpMax": 102,
+    "exp": 12,
+    "expMax": 120,
+    "level": 2,
+    "more": "More information about hero",
+    "skills": [
+      {
+        "id": "1",
+        "skillBase": "1",
+        "count": 290,
+        "endTime": 12312312,
+        "more": "1231231231",
+        "repeat": true,
+        "status": 1,
+        "title": "SuperSkill",
+        "type": 1
+      }
+    ]
+  },
+  {
+    "id": "1233",
+    "name": "human",
+    "heroBase": "7",
+    "hp": 95,
+    "hpMax": 100,
+    "mp": 10,
+    "mpMax": 102,
+    "exp": 120,
+    "expMax": 120,
+    "level": 1,
+    "more": "More information about hero",
+    "skills": []
+  }
+]
