@@ -5,13 +5,16 @@ import { clientReducer } from './client.reducer';
 import { IProfileState } from './profile.interface';
 import { profileReducer } from './profile.reducer';
 import { history } from '../history';
-import { heroesReducer, IHeroesState } from '../modules/heroes/reducer/heroes.reducer';
+import { heroesReducer, IHeroesState } from '../modules/heroes/reducers/heroes.reducer';
+import { ICitiesState } from '../modules/cities/interfaces';
+import { citiesReducer } from '../modules/cities/reducers';
 
 export interface IGlobalState {
     router: RouterState;
     client: IClientState;
     profile: IProfileState;
     heroes: IHeroesState;
+    cities: ICitiesState;
 }
 
 export const globalReducer: Reducer<IGlobalState> = combineReducers<IGlobalState>({
@@ -19,4 +22,5 @@ export const globalReducer: Reducer<IGlobalState> = combineReducers<IGlobalState
     client : clientReducer,
     profile: profileReducer,
     heroes : heroesReducer,
+    cities : citiesReducer,
 });

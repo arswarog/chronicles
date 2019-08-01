@@ -1,4 +1,4 @@
-import { IHpMpExp } from '../../../common/hp.interface';
+import { IHpMpExp } from '../../../common/hp';
 import { ISkill } from '../../skills/_interfaces/skill';
 
 export interface IHero extends IHpMpExp {

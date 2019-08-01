@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 import { IHeroFull } from '../interfaces/heroes.interface';
 import { HeroesActions } from '../actions';
-import { SUCCESS } from '../../../common/constants';
+import { SUCCESS } from '../../../common';
 
 export interface IHeroesState {
     heroes: IHeroFull[];

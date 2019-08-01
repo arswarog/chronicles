@@ -1,9 +1,7 @@
-import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/scss/index.scss';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router';
 import { compose, createStore } from 'redux';
 import App from './App';
 import { routerMiddleware } from './middlewares/router';
@@ -35,9 +33,7 @@ setTimeout(() => {
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */}
-            <Route component={App}/>
-        </ConnectedRouter>
+            <App/>
     </Provider>,
     document.getElementById('root'),
 );

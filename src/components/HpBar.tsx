@@ -1,5 +1,5 @@
 import React from 'react';
-import { count2human } from '../common/hp.interface';
+import { count2human } from '../common/hp';
 
 interface IProps {
     target: {

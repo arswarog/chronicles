@@ -1,0 +1,39 @@
+[
+  {
+    "id": "123",
+    "userID": "123",
+    "name": "CityTown",
+    "armyID": null,
+    "hp": 89,
+    "hpMax": 100,
+    "level": 2,
+    "position": {
+      "x": 18,
+      "y": 58
+    },
+    "res": {
+      "gold": 123,
+      "people": 123,
+      "food": 123,
+      "wood": 123,
+      "stone": 123,
+      "iron": 123
+    },
+    "resMax": {
+      "gold": 519,
+      "people": 519,
+      "food": 519,
+      "wood": 519,
+      "stone": 519,
+      "iron": 5193
+    },
+    "resDelta": {
+      "gold": 15,
+      "people": 15,
+      "food": 15,
+      "wood": 15,
+      "stone": 15,
+      "iron": 153
+    }
+  }
+]
