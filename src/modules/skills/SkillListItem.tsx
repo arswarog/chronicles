@@ -1,4 +1,4 @@
-import { ISkill } from './_interfaces/skill';
+import { ISkill } from './interfaces/skill';
 import React from 'react';
 import { Link } from 'react-router-dom';
 

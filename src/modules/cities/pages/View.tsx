@@ -9,13 +9,7 @@ import { getMyCity } from '../helpers';
 import { ICityResources } from '../interfaces';
 import { Televizor } from '../../../components/Televizor';
 import { MapView } from '../../../components/MapView';
-
-import peopleGit from '../../../assets/img/res/people.gif';
-import goldGit from '../../../assets/img/res/gold.gif';
-import foodGit from '../../../assets/img/res/food.gif';
-import woodGit from '../../../assets/img/res/wood.gif';
-import stoneGit from '../../../assets/img/res/stone.gif';
-import ironGit from '../../../assets/img/res/iron.gif';
+import { ResourceList } from '../components/ResourceList';
 
 
 interface IProps {
@@ -44,7 +38,7 @@ export const View = connect(
             );
 
         return (
-            <div>
+            <div className="m-cities-p-view">
                 <div className="title">{city.name}</div>
                 <HpBar target={city}/>
                 <div className="mcol">
@@ -60,28 +54,9 @@ export const View = connect(
                     </Televizor>
                 </div>
                 <div className="mcol">
-                    <div className="title"><Link to={`/city/${city.id}/res`}>Ресурсы</Link></div>
+                    <Link className="title" to={`/cities/${city.id}/res`}>Ресурсы</Link>
                     <div className="pall">
-                        <div className="cityview">
-                            <img src={peopleGit} alt="people"/>
-                            Люди: <b>{city.res.people}</b>/{city.resMax.people}
-                            [{city.resDelta.people}]<br/>
-                            <img src={goldGit} alt="gold"/>
-                            Золото: <b>{city.res.gold}</b>/{city.resMax.gold}
-                            [{city.resDelta.gold}]<br/>
-                            <img src={foodGit} alt="food"/>
-                            Еда: <b>{city.res.food}</b>/{city.resMax.food}
-                            [{city.resDelta.food}]<br/>
-                            <img src={woodGit} alt="wood"/>
-                            Дерево: <b>{city.res.wood}</b>/{city.resMax.wood}
-                            [{city.resDelta.wood}]<br/>
-                            <img src={stoneGit} alt="stone"/>
-                            Камень: <b>{city.res.stone}</b>/{city.resMax.stone}
-                            [{city.resDelta.stone}]<br/>
-                            <img src={ironGit} alt="iron"/>
-                            Железо: <b>{city.res.iron}</b>/{city.resMax.iron}
-                            [{city.resDelta.iron}]<br/>
-                        </div>
+                        <ResourceList target={city}/>
                     </div>
 
                     <div className="title">

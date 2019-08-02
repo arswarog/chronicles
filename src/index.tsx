@@ -12,6 +12,10 @@ import { applyMiddleware } from 'redux';
 import { history } from './history';
 import thunk from 'redux-thunk';
 import { apiMiddleware } from './middlewares/api';
+import { Redirect, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { CitiesModule } from './modules/cities';
+import { HeroesModule } from './modules/heroes';
 
 const store = createStore(
     globalReducer,
@@ -33,7 +37,13 @@ setTimeout(() => {
 
 ReactDOM.render(
     <Provider store={store}>
-            <App/>
+        <ConnectedRouter history={history}>
+            <App>
+                <Route path="/cities" component={CitiesModule}/>
+                <Route path="/heroes" component={HeroesModule}/>
+                <Redirect from="*" to="/cities"/>
+            </App>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById('root'),
 );

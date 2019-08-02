@@ -1,5 +1,5 @@
 import { IHpMpExp } from '../../../common/hp';
-import { ISkill } from '../../skills/_interfaces/skill';
+import { ISkill } from '../../skills/interfaces/skill';
 
 export interface IHero extends IHpMpExp {
     id: string;
